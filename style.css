@@ -187,7 +187,7 @@ main {
     }
 }
 
-@media (481px <=width < 768px) {
+@media (481px <=width < 760px) {
 
     #popup {
         overflow-y: auto;
@@ -203,7 +203,7 @@ main {
     }
 
     .popup-layer {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     }
 
     .product-content h2 {
@@ -240,5 +240,18 @@ main {
 
     .product-content p {
         font-size: 16px;
+    }
+
+    #popup {
+        overflow-y: auto;
+    }
+
+    .popup-img {
+        margin-bottom: 50px;
+    }
+
+    .product-content h2,
+    .product-content p {
+        text-align: center;
     }
 }
