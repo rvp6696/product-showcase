@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    background-color: #222831;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0px;
+}
+
+header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: #e4f1fe;
+}
+
+main {
+    padding-bottom: 100px;
+}
+
+#product-grid {
+    min-height: 200px;
+    width: 100vw;
+    padding: 0px 120px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 5fr));
+}
+
+.thumbnail-img {
+    height: 250px;
+    width: 190px;
+    border-radius: 7px;
+    object-fit: contain;
+}
+
+.thumbnail {
+    margin: 30px 30px;
+    border-radius: 7px;
+    transition: all 0.2s ease-in-out;
+    background-color: white;
+}
+
+.thumbnail:hover {
+    box-shadow: 0px 0px 20px #e3f6f5;
+    cursor: pointer;
+}
+
+#popup {
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    height: 100vh;
+    padding: 50px;
+    box-shadow: 0px 0px 10px grey;
+    border-radius: 10px;
+    background-color: #e5e5e5;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.popup-layer {
+    margin: auto auto;
+    padding: 70px 0px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+}
+
+.popup-layer a {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: darkred;
+    transition: all 0.3s ease-in-out;
+}
+
+.popup-layer a:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+.popup-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-img img {
+    height: 70vh;
+    max-width: 80%;
+    padding: 20px 10px;
+    background-color: white;
+    border-radius: 5px;
+    border: 2px solid grey;
+    box-shadow: 0px 0px 20px grey;
+    cursor: pointer;
+    object-fit: contain;
+}
+
+.product-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-content h2 {
+    font-size: 44px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.product-content p {
+    margin-top: 20px;
+    font-size: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    line-height: 30px;
+    text-align: justify
+}
+
+.grey-text {
+    color: grey;
+}
+
+/* Media Query */
+
+@media (280px <=width < 480px) {
+    header h1 {
+        font-size: 25px;
+    }
+
+    #product-grid {
+        padding: 0px 60px;
+    }
+
+    #popup {
+        overflow-y: auto;
+    }
+
+    .popup-img {
+        margin-bottom: 50px;
+    }
+
+    .popup-img img {
+        height: 45vh;
+    }
+
+    .product-content h2,
+    .product-content p {
+        text-align: center;
+    }
+
+    .popup-layer {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .product-content h2 {
+        font-size: 30px;
+    }
+
+    .product-content p {
+        font-size: 14px;
+    }
+}
+
+@media (481px <=width < 768px) {
+
+    #popup {
+        overflow-y: auto;
+    }
+
+    .popup-img {
+        margin-bottom: 50px;
+    }
+
+    .product-content h2,
+    .product-content p {
+        text-align: center;
+    }
+
+    .popup-layer {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .product-content h2 {
+        font-size: 36px;
+    }
+
+    .product-content p {
+        font-size: 15px;
+    }
+}
+
+@media (761px <=width < 1024px) {
+
+    #popup {
+        overflow-y: auto;
+    }
+
+    .popup-img {
+        margin-bottom: 50px;
+    }
+
+    .product-content h2,
+    .product-content p {
+        text-align: center;
+    }
+
+}
+
+@media (1025px <=width < 1290px) {
+
+    .product-content h2 {
+        font-size: 40px;
+    }
+
+    .product-content p {
+        font-size: 16px;
+    }
+}
